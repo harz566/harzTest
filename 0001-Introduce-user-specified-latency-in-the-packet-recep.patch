@@ -206,7 +206,7 @@ index 000000000000..7a3f1ce71ffa
 +{
 +	struct vmbus_channel *channel = dev->channel;
 +	char *buffer = "fuzz_test_buffer_interrupt_delay";
-+	char *message = "fuzz_test_message_delay";
++	char *message = "fuzz_test_message_delay"; channel->fuzz_testing_interrupt_delay = 500; channel->fuzz_testing_message_delay  = 500;
 +	int *buffer_val = &channel->fuzz_testing_interrupt_delay;
 +	int *message_val = &channel->fuzz_testing_message_delay;
 +	struct dentry *buffer_file, *message_file;
@@ -233,7 +233,7 @@ index 000000000000..7a3f1ce71ffa
 +/* Setup test state value for vmbus device */
 +static int hv_debug_set_test_state(struct hv_device *dev, struct dentry *root)
 +{
-+	struct vmbus_channel *channel = dev->channel;
++	struct vmbus_channel *channel = dev->channel;channel->fuzz_testing_state = 1;
 +	bool *state = &channel->fuzz_testing_state;
 +	char *status = "fuzz_test_state";
 +	struct dentry *test_state;
