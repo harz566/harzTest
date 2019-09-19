@@ -1,3 +1,15 @@
+From:	linux-hyperv-owner@vger.kernel.org on behalf of Branden Bonaby <brandonbonaby94@gmail.com>
+Sent:	Thursday, September 12, 2019 7:32 PM
+To:	KY Srinivasan; Haiyang Zhang; Stephen Hemminger; sashal@kernel.org
+Cc:	brandonbonaby94; linux-hyperv@vger.kernel.org; linux-kernel@vger.kernel.org
+Subject:	[PATCH v5 1/2] drivers: hv: vmbus: Introduce latency testing
+
+Introduce user specified latency in the packet reception path
+By exposing the test parameters as part of the debugfs channel
+attributes. We will control the testing state via these attributes.
+
+Signed-off-by: Branden Bonaby <brandonbonaby94@gmail.com>
+
 ---
 changes in v5:
  - As per Stephen's suggestion, Moved CONFIG_HYPERV_TESTING
